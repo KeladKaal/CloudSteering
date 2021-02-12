@@ -1,4 +1,3 @@
-from os import name
 import pickle
 
 class Employee:
@@ -22,10 +21,8 @@ class Employee:
 
 if __name__ == '__main__':
   first_empl = Employee("Mary","9055",salary=20000)
-  #output = pickle.dumps(first_empl, 2)
   output = open('data.pkl', 'wb')
-  a = dict(name=first_empl.name, phone=first_empl.phone, salary=first_empl.salary)
-  pickle.dump(a, output, 2)
+  pickle.dump(first_empl, output, 2)
   output.close()
 
   first_empl.print_salary_info()

@@ -1,6 +1,7 @@
 import  pickle
+from hw14 import Employee
 
 input = open('data.pkl', 'rb')
 obj = pickle.load(input)
-print(obj)
+obj.print_salary_info()
 input.close()
