@@ -1,7 +1,9 @@
 from geopy.geocoders import Nominatim
-import pickle
+import json
 input = open('data.pkl', 'rb')
-s = pickle.load(input)
+my_cool_f = open("data.json")
+s = json.load(my_cool_f)
+my_cool_f.close()
 geolocator = Nominatim(user_agent="migulaevat@gmail.com")
 location = geolocator.reverse(s)
 print('location: ', location.address)

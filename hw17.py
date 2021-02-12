@@ -1,10 +1,9 @@
 from GPSPhoto import gpsphoto
-import pickle
+import json
 print (gpsphoto.getGPSData('C:/Users/User/20210210_175742.jpg'))
 a = gpsphoto.getGPSData('C:/Users/User/20210210_175742.jpg')
 s = str(a.get('Latitude'))+","+str(a.get('Longitude'))
 print (s)
 
-output = open('data.pkl', 'wb')
-pickle.dump(s, output, 2)
-output.close()
+with open('data.json', 'w', encoding='utf-8') as f:
+    json.dump(s, f, ensure_ascii = False)
